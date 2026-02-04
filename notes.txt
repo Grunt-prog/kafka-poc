@@ -1,0 +1,14 @@
+pulled kafka image from docker
+started kafka on 9092
+
+docker related queries see docker-compsoe file where i pulled kafka and zookeeper
+
+topic :
+kafka-topics --create --topic test-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+producer:
+kafka-console-producer --topic test-topic --bootstrap-server localhost:9092
+
+
+consumer:
+docker exec -it kafka-docker_kafka_1 kafka-console-consumer --topic test-topic --from-beginning --bootstrap-server localhost:9092
